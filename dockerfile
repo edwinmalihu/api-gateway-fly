@@ -2,9 +2,6 @@ FROM golang:1.19-alpine3.15 AS build_base
 
 WORKDIR /tmp/api
 
-RUN apk add git
-RUN go install github.com/swaggo/swag/cmd/swag@latest
-
 COPY go.mod .
 RUN go mod download
 

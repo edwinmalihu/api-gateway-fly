@@ -31,5 +31,5 @@ func SetupRoutes() {
 	
 
 	httpRouter.Run(fmt.Sprintf(":%s", os.Getenv("SERVER_PORT")))
-	// httpRouter.Run(":8089")
+	//httpRouter.Run(":8089")
 }
