@@ -7,11 +7,10 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: superfly/flyctl-actions@v1
-        with:
-          args: "deploy -c api-gateway.toml --remote-only"
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    uses: edwinmalihu/jenkins-script/.github/reusable-flyio-deploy@v1
+    with:
+      app_name: "api-gateway-edwin" # use underscore
+      config_file: "api-gateway.toml" # use underscore
+    secrets:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      # PAT_TOKEN: ${{ secrets.YOUR_PAT_TOKEN }} # Jika perlu
