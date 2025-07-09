@@ -7,10 +7,12 @@ on:
 
 jobs:
   deploy:
-    uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy@v1
+    uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy.yml@main
     with:
-      app_name: "api-gateway-edwin" # use underscore
-      config_file: "api-gateway.toml" # use underscore
+      # Berikan nama aplikasi yang sesuai
+      app-name: "api-gateway-edwin"
+      # Berikan nama file .toml yang spesifik untuk layanan ini
+      config-file: "api-gateway.toml"
     secrets:
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
       # PAT_TOKEN: ${{ secrets.YOUR_PAT_TOKEN }} # Jika perlu
