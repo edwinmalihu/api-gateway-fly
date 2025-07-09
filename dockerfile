@@ -7,8 +7,6 @@ RUN go mod download
 
 COPY . .
 
-RUN swag init
-
 RUN go build -o main .
 
 FROM alpine:3.9 
