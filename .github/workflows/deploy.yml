@@ -6,13 +6,12 @@ on:
       - main
 
 jobs:
-  call-central-deployment:
-    uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy.yml@main
-    with:
-      # Berikan nama aplikasi yang sesuai
-      app-name: "api-gateway-edwin"
-      # Berikan nama file .toml yang spesifik untuk layanan ini
-      config-file: "api-gateway.toml"
-    secrets:
-      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-      # PAT_TOKEN: ${{ secrets.YOUR_PAT_TOKEN }} # Jika perlu
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions@v1
+        with:
+          args: "deploy -c api-gateway.toml --remote-only"
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
