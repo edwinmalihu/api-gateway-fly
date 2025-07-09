@@ -10,7 +10,7 @@ jobs:
     uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy.yml@main
     with:
       # Berikan nama aplikasi yang sesuai
-      app-name: "api-gateway-edwin"
+      app-name: "api-gateway-fly"
       # Berikan nama file .toml yang spesifik untuk layanan ini
       config-file: "api-gateway.toml"
     secrets:
