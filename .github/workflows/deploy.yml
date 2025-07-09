@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy.yml@v1
+    uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy.yml@main
     with:
       # Berikan nama aplikasi yang sesuai
       app-name: "api-gateway-edwin"
