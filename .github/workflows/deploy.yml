@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: edwinmalihu/jenkins-script/.github/reusable-flyio-deploy@v1
+    uses: edwinmalihu/jenkins-script/.github/workflows/reusable-flyio-deploy@v1
     with:
       app_name: "api-gateway-edwin" # use underscore
       config_file: "api-gateway.toml" # use underscore
